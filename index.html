@@ -1,80 +1,108 @@
-
-<!DOCTYPE html>
-  <html>
+<!DOCTYPE HTML>
+  <html lang=en>
   <head>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Number Guesser</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
   </head>
-    <body>
-      <header>
-      </header>
-
-
-
-  <section class="Boxcontainer">
-  <article class = "Guesses Guesses1">
-    <h1>Latest Score</h1>
-    <h2>Challenger 1 Name</h2>
-    <h3>current guess</h3>
-    <h4>XXX97XXX</h4>
-    <h3>that's too high</h3>
-  </article>
-  <div class="vr1"></div>
-  <article class = "Guesses Guesses2">
-    <h1>Latest Score</h1>
-    <h2>Challenger 2 Name</h2>
-    <h3>current guess</h3>
-    <h4>XXX37XXX</h4>
-    <h3 >that's too low</h3>
-  </article>
-  </section>
-
-
-<hr>
-  <section class="container2">
-    <article id="WinnerWinner">
-      <h2>Challenger 1 Name</h2>
-      <h3>vs</h3>
-      <h2>Challenger 2 Name</h2>
-      <hr>
-      <h1> CHALLENGER 2 NAME </h1>
-      <hr>
-      <table>
-        <tr>
-        <th> 47 GUESSES</th>
-        <th>1.35 MINUTES</th>
-        <th><button type="button">X</button></th>
-        </tr>
+  <body>
+    <header>
+      <div id="header-text">
+        <h1><strong>NUMBER</strong>GUESSER</h1>
+        <h3>ULTIMATE CHALLENGER EDITION</h3>
+      </div>
+    </header>
+    <section id="game-column">
+      <div id="set-range" class="game-panels">
+        <h4>Set Range</h4>
+        <form>
+          <label for="min-range">Min Range</label>
+          <label for="max-range">Max Range</label>
+          <br>
+          <input type="text" id="min-range" class="fields" name="min-range">
+          <input type="text" id="max-range" class="fields" name="max-range">
+          <button id="range-update">UPDATE</button>
+        </form>
+      </div>
+      <div id="play-game" class="game-panels">
+        <p>The Current Range is <strong>1</strong> to <strong>100</strong></p>
+        <h4>Challenger 1</h4>
+        <form>
+          <label for="challenger1">Name</label>
+          <label for="challenger1-guess">Guess</label>
+          <input type="text" id="challenger1-name" class="fields" name="challenger1">
+          <input type="text" id="challenger1-guess" class="fields" name="challenger1-guess">
+          <label for="challenger2">Name</label>
+          <label for="challenger2-guess">Guess</label>
+          <input type="text" id="challenger2-name" class="fields" name="challenger2">
+          <input type="text" id="challenger2-guess" class="fields" name="challenger2-guess">
+          <button id="submit-guess">SUBMIT GUESS</button>
+          <button id="reset-game">RESET GAME</button>
+          <button id="clear-game">CLEAR GAME</button>
+        </form>
+      </div>
+      <div id="latest-score" class="game-panels">
+        <article id="challenger1-score" class="scores">
+          <h4>Latest Score</h4>
+          <h5>Challenger 1 Name</h5>
+          <h6>current guess</h6>
+          <h1>XXX97XXX</h1>
+          <h6>that’s too high</h6>
+        </article>  
+        <article id="challenger2-score" class="scores">
+          <h5>Challenger 2 Name</h5>
+          <h6>current guess</h6>
+          <h1>XXX37XXX</h1>
+          <h6>that’s too low</h6>
+        </article>
+      </div>
+    </section>
+    <section id="wins-column">
+      <article id="WinnerWinner">
+        <h2>Challenger 1 Name</h2>
+        <h3>vs</h3>
+        <h2>Challenger 2 Name</h2>
+        <hr>
+        <h1> CHALLENGER 2 NAME </h1>
+        <hr>
+        <table>
+          <tr>
+          <th> 47 GUESSES</th>
+          <th>1.35 MINUTES</th>
+          <th><button id="circle-button" type="button">X</button></th>
+          </tr>
+          </table>
+      </article>
+      <article id="WinnerWinner">
+        <h2>Challenger 1 Name</h2>
+        <h3>vs</h3>
+        <h2>Challenger 2 Name</h2>
+        <hr>
+        <h1> CHALLENGER 2 NAME </h1>
+        <hr>  
+        <table>
+          <tr>
+          <th> 47 GUESSES</th>
+          <th>1.35 MINUTES</th>
+          <th><button id="circle-button" type="button">X</button></th>
+          </tr>
         </table>
-    </article>
-     <article id="WinnerWinner">
-      <h2>Challenger 1 Name</h2>
-      <h3>vs</h3>
-      <h2>Challenger 2 Name</h2>
-      <hr>
-      <h1> CHALLENGER 2 NAME </h1>
-      <hr>  
+        </article>
+      <article id="WinnerWinner">
+        <h2>Challenger 1 Name</h2>
+        <h3>vs</h3>
+        <h2>Challenger 2 Name</h2>
+        <hr>
+        <h1> CHALLENGER 2 NAME </h1>
+        <h1 class= "ThinBold"></h1>
+        <hr>
       <table>
         <tr>
         <th> 47 GUESSES</th>
         <th>1.35 MINUTES</th>
-        <th><button type="button">X</button></th>
+        <th><button id="circle-button" type="button">X</button></th>
         </tr>
       </table>
       </article>
-     <article id="WinnerWinner">
-      <h2>Challenger 1 Name</h2>
-      <h3>vs</h3>
-      <h2>Challenger 2 Name</h2>
-      <hr>
-      <h1> CHALLENGER 2 NAME </h1>
-      <h1 class= "ThinBold"></h1>
-      <hr>
-    <table>
-      <tr>
-      <th> 47 GUESSES</th>
-      <th>1.35 MINUTES</th>
-      <th><button type="button">X</button></th>
-      </tr>
-    </table>
-    </article>
-  </section>
+    </section>
+</body>

@@ -6,13 +6,15 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
   </head>
   <body>
-    <header>
+    
+      <header>
       <div id="header-text">
         <h1><strong>NUMBER</strong>GUESSER</h1>
         <h3>ULTIMATE CHALLENGER EDITION</h3>
       </div>
-    </header>
-    <section id="game-column">
+      </header>
+      <section id= "container">
+      <section id="game-column" class="boxes">
       <div id="set-range" class="game-panels">
         <h4>Set Range</h4>
         <form>
@@ -28,14 +30,42 @@
         <p>The Current Range is <strong>1</strong> to <strong>100</strong></p>
         <h4>Challenger 1</h4>
         <form>
-          <label for="challenger1">Name</label>
+
+          <table>
+            <tr>
+              <td>Name</td>
+              <td>Guess</td>
+            </tr>
+              <tr>
+              <td><input type="text" id="challenger1-name" class="name-fields" name="challenger1"></td>
+              <td><input type="text" id="challenger1-guess" class="fields" name="challenger1-guess"></td>
+            </tr>
+          </table>
+          <!-- <label for="challenger1">Name</label>
           <label for="challenger1-guess">Guess</label>
+          <br>
           <input type="text" id="challenger1-name" class="fields" name="challenger1">
-          <input type="text" id="challenger1-guess" class="fields" name="challenger1-guess">
+          <input type="text" id="challenger1-guess" class="fields" name="challenger1-guess"> -->
+        
+          <h4>Challenger 2</h4>
+          <table>
+            <tr>
+              <td>Name</td>
+              <td>Guess</td>
+            </tr>
+            <tr>
+               <td><input type="text" id="challenger1-name" class="name-fields" name="challenger1"></td>
+              <td><input type="text" id="challenger1-guess" class="fields" name="challenger1-guess"></td>
+            </tr>
+          </table>
+          <!-- <h4>Challenger 2</h4>
           <label for="challenger2">Name</label>
+
           <label for="challenger2-guess">Guess</label>
+          <br>
           <input type="text" id="challenger2-name" class="fields" name="challenger2">
-          <input type="text" id="challenger2-guess" class="fields" name="challenger2-guess">
+          <input type="text" id="challenger2-guess" class="fields" name="challenger2-guess"> -->
+          <br>
           <button id="submit-guess">SUBMIT GUESS</button>
           <button id="reset-game">RESET GAME</button>
           <button id="clear-game">CLEAR GAME</button>
@@ -56,8 +86,8 @@
           <h6>that’s too low</h6>
         </article>
       </div>
-    </section>
-    <section id="wins-column">
+      </section>
+      <section id="wins-column" class="boxes">
       <article id="WinnerWinner">
         <h2>Challenger 1 Name</h2>
         <h3>vs</h3>
@@ -104,5 +134,8 @@
         </tr>
       </table>
       </article>
+      </section>
     </section>
 </body>
+
+

@@ -1,18 +1,30 @@
-function getRandomNumber(min, max) {
-  return math.random() * (max - min) + min;
+// function getRandomNumber(min, max) {
+//   return math.random() * (max - min) + min;
+// }
+
+// Test Click on Submit Button
+var submitButton = document.getElementById("submit-guess");
+
+function submitGuessFunction(){
+  console.log("i'm a console log");
+  alert("i work");
 }
+
+submitButton.addEventListener("click", submitGuessFunction);
 
 // Update min and max ranges
 
-var minRange = document.getElementById("min-range");
-var maxRange = document.getElementById("max-range");
+// var minRange = document.getElementById("min-range");
+// var maxRange = document.getElementById("max-range");
 
-var updateButton = document.querySelector(“range-update”);
+var updateButton = document.getElementById("new-button-name");
 
 function minNumFunction() {
-var x = document.getElementById(“min-range”).value;
-document.getElementById(“min”).innerText = x;
-console.log();
+console.log("first alert");
+var minNumber = document.getElementById(“min-range”).value;
+document.getElementById(“min”).innerText = minNumber;
+alert("I work!");
 }
 
 updateButton.addEventListener(‘click’, minNumFunction);
+

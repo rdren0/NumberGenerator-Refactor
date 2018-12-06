@@ -14,8 +14,8 @@ git push origin RACH-N
 
 # Open PR to Master branch
 
-# Either accepted or commited.
-# If acceped
+# Either accepted or committed.
+# If accepted
 
 git checkout master
 git pull upstream master

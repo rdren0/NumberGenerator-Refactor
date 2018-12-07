@@ -1,0 +1,165 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  color: #404041;
+
+}
+header {
+  background-color: #404041;
+  text-align: center;
+  width: 100%;
+}
+
+#header-text {
+  margin: 0 auto;
+  border: 5px solid white;
+}
+
+h1 {
+  color: #DD1972;
+  font-weight: 300;
+  font-size: 40px;
+  margin: 0;
+}
+
+h3 {
+  color: white;
+  font-weight: 300;
+  margin: 0;
+}
+
+#game-column {
+  background-color: #F7F7F7;
+  border: 1px solid blue;
+  box-sizing: border-box;
+  max-width: 50%;
+  padding: 10px;
+  overflow: auto;
+
+}
+
+.game-panels {
+  background-color: #FFFFFF;
+  border: 1px solid #D0D2D3;
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 10px;
+}
+
+h4 {
+  margin: 0;
+}
+
+table
+{
+  width: 100%;
+}
+th
+{width: 30%;}
+
+button {
+  background-color: #6E6E6E;
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 8px;
+  padding: 5px 10px;
+}
+
+#circle-button { 
+  border-radius: 50%;
+}
+
+.Boxcontainer
+{
+  display: flex;
+  border: 1px dashed;
+  background-color: #D0D2D3;
+  justify-content: space-around;
+}
+.Guesses
+{ display: float;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: #D0D2D3 
+}
+
+
+
+.container2
+{display: float;
+  padding: 10px;
+  text-align: center;
+  background-color: #D0D2D3;
+}
+.vr1
+{
+  border: 2px solid #6E6E6E;
+  height: 100%
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+#Winner-Winner
+
+{ text-align: center;
+  /*margin: 10px;*/
+  padding-top: 10px;
+  padding: 10px;
+  border: 2px solid #6E6E6E;
+  background-color: #FFFFFF;
+  margin-right: 20px;
+  margin-left: 10px;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.Guesses
+{ 
+  display: float;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: #D0D2D3 
+}
+
+
+#Floating-Guesses
+{
+  text-align: center;
+  margin: 10px;
+  padding-top: 10px;
+  padding: 10px;
+  width: 50%
+  height: 30%;
+  border: 2px solid #6E6E6E;
+  background-color: #FFFFFF;}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.boxes { 
+  width:50%;
+}
+
+
+table
+{
+  text-align: left;
+}
+
+.name-fields
+{
+  min-width: 150px;
+}

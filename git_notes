@@ -1,0 +1,24 @@
+# To add upstream master branch 
+git remote add upstream https://github.com/rdren0/NumberGenerator.git
+
+# To create new feature, on updated master branch
+git checkout -b RACH-N
+
+# Do shit
+
+# Then
+git add --all
+git commit -m 'useful message'
+# Save RACH-N as the branch you are on
+git push origin RACH-N 
+
+# Open PR to Master branch
+
+# Either accepted or committed.
+# If accepted
+
+git checkout master
+git pull upstream master
+git checkout -b RACH-N+1
+
+

@@ -2,17 +2,9 @@
 //   return math.random() * (max - min) + min;
 // }
 
-// Test Click on Submit Button
 
-// function submitGuessFunction(){
-//   // console.log("i'm a console log");
-//   // alert("i work");
-// }
-
-// submitButton.addEventListener("click", submitGuessFunction);
 
 // Update min and max ranges
-
 var minRange = document.getElementById("min-range");
 var maxRange = document.getElementById("max-range");
 var min = document.getElementById("min");
@@ -60,5 +52,29 @@ min.innerText = minNumber;
 //   
 // }
 
+// Reset button resets guess fields to blank
+var resetButton = document.getElementById("reset-game");
 
+resetButton.addEventListener("click", resetGuesses);
 
+function resetGuesses() {
+  document.getElementById("challenger1-guess").reset();
+  document.getElementById("challenger2-guess").reset();
+}
+
+// Current guesses show in Latest score panel
+var challenger1CurrentGuessInput = document.getElementById("challenger1-guess");
+var challenger2CurrentGuessInput = document.getElementById("challenger2-guess");
+var submitButton = document.getElementById("submit-guess");
+
+submitButton.addEventListener("click", currentGuesses);
+
+function currentGuesses (e) {
+  e.preventDefault();
+var challenger1CurrentGuess = document.getElementById("challenger1-current-guess");
+var challenger2CurrentGuess = document.getElementById("challenger2-current-guess");
+  console.log(challenger1CurrentGuess);
+  console.log(challenger2CurrentGuess);
+  challenger1CurrentGuess.innerText = challenger1CurrentGuessInput.value;
+  challenger2CurrentGuess.innerText = challenger2CurrentGuessInput.value;
+}

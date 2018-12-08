@@ -1,5 +1,8 @@
 * {
   font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -23,13 +26,19 @@ h1 {
   font-size: 40px;
   margin: 0;
 }
+h2
+{
+  text-align: center;
+}
 
 h3 {
   color: white;
   font-weight: 300;
   margin: 0;
 }
-
+h4 {
+  margin: 0;
+}
 #game-column {
   background-color: #F7F7F7;
   border: 1px solid blue;
@@ -44,20 +53,20 @@ h3 {
   background-color: #FFFFFF;
   border: 1px solid #D0D2D3;
   box-sizing: border-box;
-  margin: 5px;
+  margin: 10px;
   padding: 10px;
 }
 
-h4 {
-  margin: 0;
-}
+
 
 table
 {
   width: 100%;
 }
 th
-{width: 30%;}
+{
+  padding: 5px;
+}
 
 button {
   background-color: #6E6E6E;
@@ -73,42 +82,10 @@ button {
   border-radius: 50%;
 }
 
-.Boxcontainer
-{
-  display: flex;
-  border: 1px dashed;
-  background-color: #D0D2D3;
-  justify-content: space-around;
-}
-.Guesses
-{ display: float;
-  padding: 10px;
-  width: 100%;
-  text-align: center;
-  background-color: #D0D2D3 
-}
 
-
-
-.container2
-{display: float;
-  padding: 10px;
-  text-align: center;
-  background-color: #D0D2D3;
-}
-.vr1
-{
-  border: 2px solid #6E6E6E;
-  height: 100%
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
 #Winner-Winner
 
 { text-align: center;
-  /*margin: 10px;*/
   padding-top: 10px;
   padding: 10px;
   border: 2px solid #6E6E6E;
@@ -129,29 +106,6 @@ button {
 }
 
 
-#Floating-Guesses
-{
-  text-align: center;
-  margin: 10px;
-  padding-top: 10px;
-  padding: 10px;
-  width: 50%
-  height: 30%;
-  border: 2px solid #6E6E6E;
-  background-color: #FFFFFF;}
-
-#container {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  width: 100vw;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.boxes { 
-  width:50%;
-}
 
 
 table
@@ -162,4 +116,56 @@ table
 .name-fields
 {
   min-width: 150px;
+}
+
+.body-container
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  align-items: stretch;
+ 
+  }
+
+.boxone
+{background-color: #F7F7F7;
+  margin: 0;
+  width: 50%;
+}
+
+.boxtwo
+{
+  display: flex;
+  background-color: #D0D2D3;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.info-cards
+{
+  border: 1px solid #404041;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 10px;
+
+
+
+}
+.latest-score-title
+{
+  width: 100%;
+display: block;
+flex-direction: column;}
+
+#latest-score
+{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.versus-table
+{
+  text-align: center;
 }

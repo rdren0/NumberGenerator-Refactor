@@ -8,6 +8,7 @@ var guessInput1 = document.getElementById("input-Challenger1-guess");
 var guessInput2 = document.getElementById("input-Challenger2-guess");
 var submitButton = document.getElementById("submit-guess");
 var fillNamePlayer1 = document.getElementById("fill-Challenger1-name");
+var fillNamePlayer2 = document.getElementById("fill-Challenger2-name");
 
 submitButton.addEventListener("click", submitGuessFunction);
 
@@ -19,7 +20,7 @@ function submitGuessFunction(e){
   var FirstGuess = guessInput1.value;
   alert(FirstPerson);
   alert(FirstGuess);
-  // fillNamePlayer1.innerText = FirstPerson;
+  fillNamePlayer1.innerText = FirstPerson;
   var SecondPerson = nameInput2.value;
   var SecondGuess = guessInput2.value;
   alert(SecondPerson);

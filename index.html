@@ -20,15 +20,15 @@
           <label for="min-range">Min Range</label>
           <label for="max-range">Max Range</label>
           <br>
-          <input type="text" id="min-range" class="fields" name="min-range">
-          <input type="text" id="max-range" class="fields" name="max-range">
+          <input type="number" id="min-range" class="fields" name="min-range">
+          <input type="number" id="max-range" class="fields" name="max-range">
           <button id="new-button-name">UPDATE</button>
         </form>
       </div>
       <div id="play-game" class="game-panels">
         <p>The Current Range is <span id="min"><strong>1</strong></span> to <span id="max"><strong>100</strong></span></p>
 
-        <h4><span id="fill-Challenger1-name"> Challenger 1 Name</span></h4>
+        <h4>Challenger 1</h4>
 
         <form>
           <table>
@@ -39,7 +39,7 @@
               <tr>
 
               <td><input type="text" id="input-Challenger1-name" class="name-fields" name="challenger1"></td>
-              <td><input type="text" id="input-Challenger1-guess" class="fields" name="challenger1-guess"></td>
+              <td><input type="number" min="1" max="100" id="input-Challenger1-guess" class="fields" name="challenger1-guess"></td>
 
             </tr>
           </table>
@@ -51,7 +51,7 @@
             </tr>
             <tr>
                <td><input type="text" id="input-Challenger2-name" class="name-fields" name="challenger2"></td>
-              <td><input type="text" id="input-Challenger2-guess" class="fields" name="challenger2-guess"></td>
+              <td><input type="number" id="input-Challenger2-guess" class="fields" name="challenger2-guess"></td>
             </tr>
           </table>
           <br>
@@ -67,13 +67,13 @@
         <article id="challenger1-score" class="scores">
           <h5><span id="fill-Challenger1-name">CHALLENGER 1 NAME</span></h5>
           <h6>current guess</h6>
-          <h1 id="challenger1-current-guess"><strong>XX97XX</strong></h1>
+          <h1 id="challenger1-current-guess"><strong>00</strong></h1>
           <h6>that’s too high</h6>
         </article>  
         <article id="challenger2-score" class="scores">
-          <h5 id="fill-Challenger2-ame">Challenger 2 Name</h5>
+          <h5 id="fill-Challenger2-name">Challenger 2 Name</h5>
           <h6>current guess</h6>
-          <h1 id="challenger2-current-guess"><strong>XX37XX</strong></h1>
+          <h1 id="challenger2-current-guess"><strong>00</strong></h1>
           <h6>that’s too low</h6>
         </article>
       </div>

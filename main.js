@@ -10,22 +10,24 @@ var submitButton = document.getElementById("submit-guess");
 var fillNamePlayer1 = document.getElementById("fill-Challenger1-name");
 var fillNamePlayer2 = document.getElementById("fill-Challenger2-name");
 
-submitButton.addEventListener("click", submitGuessFunction);
+// submitButton.addEventListener("click", submitGuessFunction);
 
 
-function submitGuessFunction(e){
-  e.preventDefault();
-  alert("alert alert");
-  var FirstPerson = nameInput1.value;
-  var FirstGuess = guessInput1.value;
-  alert(FirstPerson);
-  alert(FirstGuess);
-  fillNamePlayer1.innerText = FirstPerson;
-  var SecondPerson = nameInput2.value;
-  var SecondGuess = guessInput2.value;
-  alert(SecondPerson);
-  alert(SecondGuess);
-}
+// function submitGuessFunction(e){
+//   debugger;
+//   e.preventDefault();
+//   alert("alert alert");
+//   var FirstPerson = nameInput1.value;
+//   var FirstGuess = guessInput1.value;
+//   alert(FirstPerson);
+//   alert(FirstGuess);
+//   fillNamePlayer1.innerText = FirstPerson;
+//   var SecondPerson = nameInput2.value;
+//   var SecondGuess = guessInput2.value;
+//   alert(SecondPerson);
+//   alert(SecondGuess);
+//   debugger;
+// }
 
 
 var minRange = document.getElementById("min-range");
@@ -63,19 +65,27 @@ function resetGuesses() {
 }
 
 // Current guesses show in Latest score panel
-var challenger1CurrentGuessInput = document.getElementById("challenger1-guess");
-var challenger2CurrentGuessInput = document.getElementById("challenger2-guess");
+var challenger1CurrentNameInput = document.getElementById("input-Challenger1-name");
+var challenger1CurrentGuessInput = document.getElementById("input-Challenger1-guess");
+var challenger2CurrentNameInput = document.getElementById("input-Challenger2-name");
+var challenger2CurrentGuessInput = document.getElementById("input-Challenger2-guess");
 var submitButton = document.getElementById("submit-guess");
 
 submitButton.addEventListener("click", currentGuesses);
 
 function currentGuesses (e) {
   e.preventDefault();
+var challenger1CurrentName = document.getElementById("fill-Challenger1-name");
 var challenger1CurrentGuess = document.getElementById("challenger1-current-guess");
+var challenger2CurrentName = document.getElementById("fill-Challenger2-name");
 var challenger2CurrentGuess = document.getElementById("challenger2-current-guess");
+  console.log(challenger1CurrentName);
   console.log(challenger1CurrentGuess);
+  console.log(challenger2CurrentName);
   console.log(challenger2CurrentGuess);
+  challenger1CurrentName.innerHTML = challenger1CurrentNameInput.value;
   challenger1CurrentGuess.innerText = challenger1CurrentGuessInput.value;
+  challenger2CurrentName.innerHTML = challenger2CurrentNameInput.value;
   challenger2CurrentGuess.innerText = challenger2CurrentGuessInput.value;
 }
 
@@ -89,19 +99,19 @@ function resetGuesses() {
   document.getElementById("challenger2-guess").reset();
 }
 
-// Current guesses show in Latest score panel
-var challenger1CurrentGuessInput = document.getElementById("challenger1-guess");
-var challenger2CurrentGuessInput = document.getElementById("challenger2-guess");
-var submitButton = document.getElementById("submit-guess");
+// // Current guesses show in Latest score panel
+// var challenger1CurrentGuessInput = document.getElementById("challenger1-guess");
+// var challenger2CurrentGuessInput = document.getElementById("challenger2-guess");
+// var submitButton = document.getElementById("submit-guess");
 
-submitButton.addEventListener("click", currentGuesses);
+// submitButton.addEventListener("click", currentGuesses);
 
-function currentGuesses (e) {
-  e.preventDefault();
-var challenger1CurrentGuess = document.getElementById("challenger1-current-guess");
-var challenger2CurrentGuess = document.getElementById("challenger2-current-guess");
-  console.log(challenger1CurrentGuess);
-  console.log(challenger2CurrentGuess);
-  challenger1CurrentGuess.innerText = challenger1CurrentGuessInput.value;
-  challenger2CurrentGuess.innerText = challenger2CurrentGuessInput.value;
-}
+// function currentGuesses (e) {
+//   e.preventDefault();
+// var challenger1CurrentGuess = document.getElementById("challenger1-current-guess");
+// var challenger2CurrentGuess = document.getElementById("challenger2-current-guess");
+//   console.log(challenger1CurrentGuess);
+//   console.log(challenger2CurrentGuess);
+//   challenger1CurrentGuess.innerText = challenger1CurrentGuessInput.value;
+//   challenger2CurrentGuess.innerText = challenger2CurrentGuessInput.value;
+// }

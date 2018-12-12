@@ -1,75 +1,31 @@
+// Generating random number 
+var randomNumber = Math.floor((Math.random() * 100) + 1);
+console.log(randomNumber);
 
-
-     
-
-
-
-
-
-
-////////////////Submits Names and Guesses, changes text///////////////////
-
-var nameInput1 = document.getElementById("input-Challenger1-name"); 
-var nameInput2 = document.getElementById("input-Challenger2-name");
-var guessInput1 = document.getElementById("input-Challenger1-guess"); 
-var guessInput2 = document.getElementById("input-Challenger2-guess");
-var submitButton = document.getElementById("submit-guess");
-var fillNamePlayer1 = document.getElementById("fill-Challenger1-name");
-var fillNamePlayer2 = document.getElementById("fill-Challenger2-name");
-
-// submitButton.addEventListener("click", submitGuessFunction);
-
-// var closeButton = document.getElementById("circle-button");
-// var gameCard = document.getElementById("info-cards");
-
-// closeButton.addEventListener("click", clearGameCard);
-
-// function clearGameCard() {
-//   gameCard.style.visibility = "hidden";
-
-
-// function submitGuessFunction(e){
-//   debugger;
-//   e.preventDefault();
-//   alert("alert alert");
-//   var FirstPerson = nameInput1.value;
-//   var FirstGuess = guessInput1.value;
-//   alert(FirstPerson);
-//   alert(FirstGuess);
-//   fillNamePlayer1.innerText = FirstPerson;
-//   var SecondPerson = nameInput2.value;
-//   var SecondGuess = guessInput2.value;
-//   alert(SecondPerson);
-//   alert(SecondGuess);
-//   debugger;
-// }
-
+// Setting min and max range
 
 var minRange = document.getElementById("min-range");
 var maxRange = document.getElementById("max-range");
-var min = document.getElementById("min");
-var max = document.getElementById("max");
+var minDisplay = document.getElementById("min");
+var maxDisplay = document.getElementById("max");
 var updateButton = document.getElementById("new-button-name");
-
 
 updateButton.addEventListener('click', minNumFunction);
 
 function minNumFunction(e) {
   e.preventDefault();
-console.log("first alert");
+console.log("range set");
 var minNumber = minRange.value;
-//alert(minNumber);
-min.innerText = minNumber;
+minDisplay.innerText = minNumber;
 var maxNumber = maxRange.value;
-//alert(maxNumber);
-max.innerText = maxNumber;
-
+maxDisplay.innerText = maxNumber;
 }
 
+var challenger1Alert = document.getElementById("challenger1-alert");
+var challenger2Alert = document.getElementById("challenger2-alert");
 
 
-
-// Reset button resets guess fields to blank
+// Reset button resets all fields to blank
 var resetButton = document.getElementById("reset-game");
 
 resetButton.addEventListener("click", resetGuesses);
@@ -85,26 +41,31 @@ var challenger1CurrentGuessInput = document.getElementById("input-Challenger1-gu
 var challenger2CurrentNameInput = document.getElementById("input-Challenger2-name");
 var challenger2CurrentGuessInput = document.getElementById("input-Challenger2-guess");
 var submitButton = document.getElementById("submit-guess");
-
-submitButton.addEventListener("click", currentGuesses);
-
-function currentGuesses (e) {
-  e.preventDefault();
 var challenger1CurrentName = document.getElementById("fill-Challenger1-name");
 var challenger1CurrentGuess = document.getElementById("challenger1-current-guess");
 var challenger2CurrentName = document.getElementById("fill-Challenger2-name");
 var challenger2CurrentGuess = document.getElementById("challenger2-current-guess");
-  console.log(challenger1CurrentName);
-  console.log(challenger1CurrentGuess);
-  console.log(challenger2CurrentName);
-  console.log(challenger2CurrentGuess);
-  challenger1CurrentName.innerHTML = challenger1CurrentNameInput.value;
-  challenger1CurrentGuess.innerText = challenger1CurrentGuessInput.value;
-  challenger2CurrentName.innerHTML = challenger2CurrentNameInput.value;
-  challenger2CurrentGuess.innerText = challenger2CurrentGuessInput.value;
-  functionAddCard();
-}
 
+submitButton.addEventListener("click", currentGuesses);
+
+function currentGuesses(e) {
+  e.preventDefault();
+  challenger1CurrentName.innerText = challenger1CurrentNameInput.value;
+  challenger1CurrentGuess.innerText = challenger1CurrentGuessInput.value;
+  challenger2CurrentName.innerText = challenger2CurrentNameInput.value;
+  challenger2CurrentGuess.innerText = challenger2CurrentGuessInput.value;
+  checkGueses();
+}
+function checkGueses() {
+  console.log(parseInt(challenger1CurrentGuessInput.value));
+  if (parseInt(challenger1CurrentGuessInput.value) < randomNumber) {
+  challenger1Alert.innerText = "That's too low!";
+  } else if (parseInt(challenger1CurrentGuessInput.value) > randomNumber) {
+  challenger1Alert.innerText = "That's too high!";
+  } else {
+    challenger1Alert.innerText = "BOOM";
+}
+}
 // Reset button resets guess fields to blank
 var resetButton = document.getElementById("reset-game");
 
@@ -113,6 +74,7 @@ resetButton.addEventListener("click", resetGuesses);
 function resetGuesses() {
   document.getElementById("challenger1-guess").reset();
   document.getElementById("challenger2-guess").reset();
+
 }
 
 function functionAddCard(){
@@ -141,22 +103,6 @@ var cardHTML = `<article id="${cardNumber}">
         cardNumber++;
         boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);
       }
-// // Current guesses show in Latest score panel
-// var challenger1CurrentGuessInput = document.getElementById("challenger1-guess");
-// var challenger2CurrentGuessInput = document.getElementById("challenger2-guess");
-// var submitButton = document.getElementById("submit-guess");
 
-// submitButton.addEventListener("click", currentGuesses);
+///boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);
 
-// function currentGuesses (e) {
-//   e.preventDefault();
-// var challenger1CurrentGuess = document.getElementById("challenger1-current-guess");
-// var challenger2CurrentGuess = document.getElementById("challenger2-current-guess");
-//   console.log(challenger1CurrentGuess);
-//   console.log(challenger2CurrentGuess);
-//   challenger1CurrentGuess.innerText = challenger1CurrentGuessInput.value;
-//   challenger2CurrentGuess.innerText = challenger2CurrentGuessInput.value;
-// }
-
-
-boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);

@@ -3,6 +3,7 @@ var randomNumber = Math.floor((Math.random() * 100) + 1);
 console.log(randomNumber);
 
 // Setting min and max range
+
 var minRange = document.getElementById("min-range");
 var maxRange = document.getElementById("max-range");
 var minDisplay = document.getElementById("min");
@@ -73,4 +74,35 @@ resetButton.addEventListener("click", resetGuesses);
 function resetGuesses() {
   document.getElementById("challenger1-guess").reset();
   document.getElementById("challenger2-guess").reset();
+
 }
+
+function functionAddCard(){
+var cardNumber =0;
+var boxTwoSection = document.querySelector(".boxtwo");
+var cardHTML = `<article id="${cardNumber}">
+          <table class="versus-table">
+            <tr>
+             <th><span id="fill-Challenger1-name">${challenger1CurrentNameInput.value}</span></th>
+              <th> vs </th>
+              <th>${challenger2CurrentNameInput.value}</th>
+            </tr>
+          </table>
+            <hr>
+          <h2> XXX WINNERS NAME XXX </h2>
+          <h2>WINNER</h2>
+            <hr>
+          <table>
+            <tr>
+              <th>XXXXX NUMBER OF GUESSES</th>
+              <th>XXXXX GAME DURATION</th>
+              <th><button id="circle-button" type="button">&#x2715;</button></th>
+            </tr>
+          </table>
+        </article>`
+        cardNumber++;
+        boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);
+      }
+
+///boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);
+

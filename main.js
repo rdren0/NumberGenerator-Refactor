@@ -1,6 +1,13 @@
 
 
-/////////////////Submits Names and Guesses, changes text///////////////////
+     
+
+
+
+
+
+
+////////////////Submits Names and Guesses, changes text///////////////////
 
 var nameInput1 = document.getElementById("input-Challenger1-name"); 
 var nameInput2 = document.getElementById("input-Challenger2-name");
@@ -11,6 +18,14 @@ var fillNamePlayer1 = document.getElementById("fill-Challenger1-name");
 var fillNamePlayer2 = document.getElementById("fill-Challenger2-name");
 
 // submitButton.addEventListener("click", submitGuessFunction);
+
+// var closeButton = document.getElementById("circle-button");
+// var gameCard = document.getElementById("info-cards");
+
+// closeButton.addEventListener("click", clearGameCard);
+
+// function clearGameCard() {
+//   gameCard.style.visibility = "hidden";
 
 
 // function submitGuessFunction(e){
@@ -87,6 +102,7 @@ var challenger2CurrentGuess = document.getElementById("challenger2-current-guess
   challenger1CurrentGuess.innerText = challenger1CurrentGuessInput.value;
   challenger2CurrentName.innerHTML = challenger2CurrentNameInput.value;
   challenger2CurrentGuess.innerText = challenger2CurrentGuessInput.value;
+  functionAddCard();
 }
 
 // Reset button resets guess fields to blank
@@ -99,6 +115,32 @@ function resetGuesses() {
   document.getElementById("challenger2-guess").reset();
 }
 
+function functionAddCard(){
+var cardNumber =0;
+var boxTwoSection = document.querySelector(".boxtwo");
+var cardHTML = `<article id="${cardNumber}">
+          <table class="versus-table">
+            <tr>
+             <th><span id="fill-Challenger1-name">${challenger1CurrentNameInput.value}</span></th>
+              <th> vs </th>
+              <th>${challenger2CurrentNameInput.value}</th>
+            </tr>
+          </table>
+            <hr>
+          <h2> XXX WINNERS NAME XXX </h2>
+          <h2>WINNER</h2>
+            <hr>
+          <table>
+            <tr>
+              <th>XXXXX NUMBER OF GUESSES</th>
+              <th>XXXXX GAME DURATION</th>
+              <th><button id="circle-button" type="button">&#x2715;</button></th>
+            </tr>
+          </table>
+        </article>`
+        cardNumber++;
+        boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);
+      }
 // // Current guesses show in Latest score panel
 // var challenger1CurrentGuessInput = document.getElementById("challenger1-guess");
 // var challenger2CurrentGuessInput = document.getElementById("challenger2-guess");
@@ -115,3 +157,6 @@ function resetGuesses() {
 //   challenger1CurrentGuess.innerText = challenger1CurrentGuessInput.value;
 //   challenger2CurrentGuess.innerText = challenger2CurrentGuessInput.value;
 // }
+
+
+boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);

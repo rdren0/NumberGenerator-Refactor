@@ -97,10 +97,6 @@ margin-top: 10px;
   text-align: left;
   margin-bottom: -10px;
 }
-<<<<<<< HEAD
-.game-text-info{
-font-size: 13px;
-=======
 
 .game-text-info {
   font-size: 13px;
@@ -109,7 +105,7 @@ font-size: 13px;
 #latest-score-title {
   display: block;
   margin: 0 auto; 
->>>>>>> a4698f97fa5bb3d7f3ea83522e97c0577a070931
+
 }
 
 #game-column {
@@ -301,17 +297,12 @@ hr-vertical{
     margin: 0;
   }
 
-<<<<<<< HEAD
   #set-range button{
   margin-top: 10px;
 }
   #set-range ul{
   display: inline;
   list-style-type: none;
-=======
-  #latest-score-title {
-    margin-left: 75px;
->>>>>>> a4698f97fa5bb3d7f3ea83522e97c0577a070931
   }
 
   .min-range {
@@ -321,46 +312,38 @@ hr-vertical{
   .max-range {
     display: block;
   }
-<<<<<<< HEAD
   #scores{
     width: 320px;
     flex:1;
   }
   #latest-score{
     display: block;
+    /*display: flex;*/
   }
   #latest-score .scores{
     margin-bottom: 15px;
   }
-  .latest-score-title{
+  #latest-score-title{
     font-weight: 700;
     padding-left: -5px;
+    margin-left: 75px;
   }
   .scores h6{
     font-weight: 300;
   }
+  /*#scores {
+    width: 320px;
+    flex:1;
+  }*/
   .min-range-section{
     display: inline;
   }
   button{
-=======
 
-  .latest-score {
-    display: flex;
-  }
-
-  #scores {
-    width: 320px;
-    flex:1;
-  }
-
-  button {
->>>>>>> a4698f97fa5bb3d7f3ea83522e97c0577a070931
     margin: 2px;
     display: block;
     text-align: center;
   }
-<<<<<<< HEAD
   .player-input-fields{
     text-align: center;
   }
@@ -378,8 +361,10 @@ hr-vertical{
     display: flex;
   }
     
-  hr-vertical{
+  #hr-vertical{
     padding-top: -15px;
+    width: 100;
+    size: 1;
 
     }
 
@@ -394,17 +379,4 @@ hr-vertical{
     font-weight: 800;
 
     }
-=======
-}
 
-#play-game-button {
-  margin: auto;
-  text-align: center;
-  display: block;
-}
-
-#hr-vertical {
-  width: 100;
-  size: 1;
-}
->>>>>>> a4698f97fa5bb3d7f3ea83522e97c0577a070931

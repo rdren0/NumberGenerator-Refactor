@@ -55,6 +55,7 @@ function currentGuesses(e) {
   challenger2CurrentName.innerText = challenger2CurrentNameInput.value;
   challenger2CurrentGuess.innerText = challenger2CurrentGuessInput.value;
   checkGueses();
+  functionAddCard();
 }
 function checkGueses() {
   console.log(parseInt(challenger1CurrentGuessInput.value));
@@ -66,7 +67,7 @@ function checkGueses() {
     challenger1Alert.innerText = "BOOM";
 }
 }
-// Reset button resets guess fields to blank
+///Reset button resets guess fields to blank
 var resetButton = document.getElementById("reset-game");
 
 resetButton.addEventListener("click", resetGuesses);
@@ -77,32 +78,77 @@ function resetGuesses() {
 
 }
 
+var submitButtonVar = document.getElementById('new-button-name');
+submitButtonVar.addEventListener("click", DisableButtons);
+
+
+function DisableButtons(){
+       var chalOneInput = document.getElementById('input-Challenger1-name');
+       var chalTwoInput = document.getElementById('input-Challenger2-name');
+       var chalOneNum = document.getElementById('input-Challenger1-guess');
+       var chalTwoNum = document.getElementById('input-Challenger1-guess');
+       var resetButton = document.getElementById('reset-game')
+       var clearButton = document.getElementById('clear-game');
+         if ( chalOneInput.value.length = 0) {
+              clearButton.Disable = true;
+              resetButton.Disable = true;
+            } else if (chalTwoInput.value.length =0 ){
+              clearButton.Disable = true;
+              resetButton.Disable = true;
+            } else if (chalOneNum.value.length=0){
+              clearButton.Disable = true;
+              resetButton.Disable = true;
+            }else if (chalTwoNum.value.length =0){
+              clearButton.Disable = true;
+              resetButton.Disable = true;
+            }
+   }
+
+
+var minRangeField = document.getElementById('min-range');
+minRangeField.addEventListener("keyup", RangesIncorrect);
+
+function RangesIncorrect(){
+  var minRangeNumber = document.getElementById('min-range');
+  var maxRangeNumber = document.getElementById('max-range');
+  // var newButtonVar = document.getElementById('new-button-name');
+  if (parseInt(minRangeNumber.value) > parseInt(maxRangeNumber.value)){
+      document.getElementById("new-button-name").disabled = true;
+      alert("Your minimum number is higher than your maximum!");
+    } else if (parseInt(maxRangeNumber.value) < parseInt(minRangeNumber.value)){
+      document.getElementById("new-button-name").disabled = true;
+      alert("Your maximum number is lower than your minimum!");
+    } 
+}
+
 function functionAddCard(){
 var cardNumber =0;
 var boxTwoSection = document.querySelector(".boxtwo");
-var cardHTML = `<article id="${cardNumber}">
+var cardNumberAdds = document.querySelector(".cardNumber");
+var cardHTML = `<article class="card-info" id="${cardNumber} ">
           <table class="versus-table">
             <tr>
-             <th><span id="fill-Challenger1-name">${challenger1CurrentNameInput.value}</span></th>
-              <th> vs </th>
-              <th>${challenger2CurrentNameInput.value}</th>
+             <th><h2>${challenger1CurrentNameInput.value}</h2></th>
+              <th><h4> vs </h4> </th>
+              <th><h2>${challenger2CurrentNameInput.value}</h2></th>
             </tr>
           </table>
             <hr>
-          <h2> XXX WINNERS NAME XXX </h2>
-          <h2>WINNER</h2>
+          <h2 id= "winner-name-text">  CHALLENGER X NAME </h2>
+          <h4 class='winner-text'>WINNER</h4>
             <hr>
-          <table>
+          <table class="game-info">
             <tr>
-              <th>XXXXX NUMBER OF GUESSES</th>
-              <th>XXXXX GAME DURATION</th>
-              <th><button id="circle-button" type="button">&#x2715;</button></th>
+              <th><h4 class="game-text-info"><b>00</b> GUESSES </h4></th>
+              <th><h4 class="game-text-info"><b>00.00</b> MINUTES</h4></th>
+              <th><button id="circle-button" type="button" onClick="document.getElementById('card-info').style.visibility = 'hidden';">&#x2715;</button></th>
             </tr>
           </table>
         </article>`
         cardNumber++;
-        boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);
+        boxTwoSection.insertAdjacentHTML('beforeend',cardHTML);
       }
 
 ///boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);
+
 

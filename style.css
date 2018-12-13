@@ -59,9 +59,6 @@ margin-top: 10px;
 }
 .game-text-info{
 font-size: 13px;
-
-
-
 }
 #game-column {
   background-color: #F7F7F7;
@@ -253,8 +250,11 @@ margin-bottom: 10px;}
 #challenger2-score{
   margin-top: 22px;
 }
-
-
+hr-vertical{
+   width:1px;
+  height: 140px;
+  color: gainsboro;
+}
 @media (max-width: 500px) {
   body{
     width: 320px;
@@ -267,8 +267,13 @@ margin-bottom: 10px;}
     max-width: 320px;
     margin: 0;
   }
-  #latest-score-title{
-    margin-left: 75px;
+
+  #set-range button{
+  margin-top: 10px;
+}
+  #set-range ul{
+  display: inline;
+  list-style-type: none;
   }
   .min-range{
     display: block;
@@ -276,24 +281,61 @@ margin-bottom: 10px;}
   .max-range{
     display: block;
   }
-  .latest-score{
-    display: flex;
-  }
   #scores{
     width: 320px;
     flex:1;
+  }
+  #latest-score{
+    display: block;
+  }
+  #latest-score .scores{
+    margin-bottom: 15px;
+  }
+  .latest-score-title{
+    font-weight: 700;
+    padding-left: -5px;
+  }
+  .scores h6{
+    font-weight: 300;
+  }
+  .min-range-section{
+    display: inline;
   }
   button{
     margin: 2px;
     display: block;
     text-align: center;
   }
-#play-game-button{
-  margin: auto;
-  text-align: center;
-  display: block;
-}
-#hr-vertical{
-  width: 100;
-  size: 1;
-}
+  .player-input-fields{
+    text-align: center;
+  }
+  #play-game-button{
+    margin: auto;
+    text-align: center;
+    display: block;
+  }
+  #hr-vertical{
+    width: 100;
+    size: 1;
+  }
+  .gamepanel{
+    text-align: center;
+    display: flex;
+  }
+    
+  hr-vertical{
+    padding-top: -15px;
+
+    }
+
+  #challenger1-current-guess{
+    font-size: 50px;
+    font-weight: 800;
+
+    }
+
+  #challenger2-current-guess{
+    font-size: 50px;
+    font-weight: 800;
+
+    }

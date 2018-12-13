@@ -8,10 +8,8 @@
 body {
   color: #404041;
   height: 100%;
-
-
-
 }
+
 header {
   background-color: #404041;
   text-align: center;
@@ -19,8 +17,9 @@ header {
 }
 
 #header-text {
+  height: 90px;
+  width: 348px;
   margin: 0 auto;
-  border: 5px solid white;
 }
 
 h1 {
@@ -29,20 +28,59 @@ h1 {
   font-size: 40px;
   margin: 0;
 }
-h2
-{
+
+h2 {
   text-align: center;
+}
+
+label {
+  font-size: 15px;
+}
+/*label,
+table,
+td,
+form {
+  border: 2px solid green;
+  font-size: 20px;
+}
+*/
+input.fields {
+  width: 150px;
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input.name-fields {
+  width: 250px;
 }
 
 h3 {
   color: white;
   font-weight: 300;
+  font-size: smaller;
   margin: 0;
+  display: flex;
+  background: transparent;
 }
+
+h3:before, 
+h3:after {
+  color: white;
+  content:'';
+  flex: 1;
+  border-bottom: solid 1px;
+  margin: auto 0.25em; 
+}
+
 h4 {
   margin: 0;
   font-weight: 100;
 }
+
 .winner-text{
   text-align: center;
   font-size: 25px;
@@ -50,19 +88,25 @@ h4 {
   margin-bottom: 10px;
   margin-top: -5px;
 }
+
 #winner-name-text{
 margin-top: 10px;
 }
+
 .game-info{
   text-align: left;
   margin-bottom: -10px;
 }
-.game-text-info{
-font-size: 13px;
 
-
-
+.game-text-info {
+  font-size: 13px;
 }
+
+#latest-score-title {
+  display: block;
+  margin: 0 auto; 
+}
+
 #game-column {
   background-color: #F7F7F7;
   border: 1px solid blue;
@@ -70,7 +114,6 @@ font-size: 13px;
   max-width: 50%;
   padding: 10px;
   overflow: auto;
-
 }
 
 .game-panels {
@@ -87,12 +130,11 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-table
-{
+table {
   width: 100%;
 }
-th
-{
+
+th {
   padding: 5px;
   height: 10px;
 }
@@ -114,9 +156,8 @@ button {
 }
 
 
-#Winner-Winner
-
-{ text-align: center;
+#Winner-Winner {
+  text-align: center;
   padding-top: 10px;
   padding: 10px;
   border: 2px solid #6E6E6E;
@@ -127,8 +168,7 @@ button {
   overflow: auto;
 }
 
-.Guesses
-{ 
+.Guesses { 
   display: float;
   padding: 10px;
   width: 100%;
@@ -137,48 +177,38 @@ button {
 }
 
 
-table
-{
+table {
   text-align: left;
   font-size: 10px;
 }
 
-.name-fields
-{
-  min-width: 150px;
-}
-
-.body-container
-{
+.body-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: stretch;
   align-items: stretch;
   margin: 0;
   padding: 0;
- 
   }
 
-.boxone
-{background-color: #F7F7F7;
+.boxone {
+  background-color: #F7F7F7;
   margin: 0;
   width: 50%;
-  flex:1;
+  flex: 1;
 }
 
-.boxtwo
-{
+.boxtwo {
   display: flex;
   background-color: #D0D2D3;
   flex-direction: column;
   padding: 10px;
   flex:1;
- padding-bottom: 100px;
- margin-top: 0;x
+  padding-bottom: 100px;
+  margin-top: 0;x
 }
 
-.card-info
-{
+.card-info {
   border: 1px solid #404041;
   background-color: #FFFFFF;
   box-sizing: border-box;
@@ -188,13 +218,9 @@ table
   margin-top: 3px;
   padding: 10px;
   height: auto !important;
-
 }
 
-
-
-#latest-score
-{
+#latest-score {
   display: flex;
   flex-wrap: wrap;
   justify-content:space-around;
@@ -202,21 +228,18 @@ table
   text-align: center;
   padding: 5px;
 }
-.scores
-{
-box-sizing: border-box;
-flex:1;
 
+.scores {
+  box-sizing: border-box;
+  flex: 1;
 }
 
-.versus-table
-{
+.versus-table {
   text-align: center;
   font-size: 10px;
-
 }
 
-#submit-guess{
+#submit-guess {
 font-size: 15px;
 padding-top: 2px;
 padding-bottom: 2px;
@@ -256,44 +279,55 @@ margin-bottom: 10px;}
 
 
 @media (max-width: 500px) {
-  body{
+  body {
     width: 320px;
     margin-top: 0;
   }
-  h1{
+
+  h1 {
     font-size: 20px;
   }
-  .card-info{
+
+  .card-info {
     max-width: 320px;
     margin: 0;
   }
-  #latest-score-title{
+
+  #latest-score-title {
     margin-left: 75px;
   }
-  .min-range{
+
+  .min-range {
     display: block;
   }
-  .max-range{
+
+  .max-range {
     display: block;
   }
-  .latest-score{
+
+  .latest-score {
     display: flex;
   }
-  #scores{
+
+  #scores {
     width: 320px;
     flex:1;
   }
-  button{
+
+  button {
     margin: 2px;
     display: block;
     text-align: center;
   }
-#play-game-button{
+}
+
+#play-game-button {
   margin: auto;
   text-align: center;
   display: block;
 }
-#hr-vertical{
+
+#hr-vertical {
   width: 100;
   size: 1;
 }

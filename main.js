@@ -28,17 +28,6 @@ function updateRandomNumber(min, max) {
 var challenger1Alert = document.getElementById("challenger1-alert");
 var challenger2Alert = document.getElementById("challenger2-alert");
 
-
-// Reset button resets all fields to blank
-var resetButton = document.getElementById("reset-game");
-
-resetButton.addEventListener("click", resetGuesses);
-
-function resetGuesses() {
-  document.getElementById("challenger1-guess").reset();
-  document.getElementById("challenger2-guess").reset();
-}
-
 // Current guesses show in Latest score panel
 var challenger1CurrentNameInput = document.getElementById("input-Challenger1-name");
 var challenger1CurrentGuessInput = document.getElementById("input-Challenger1-guess");
@@ -60,8 +49,8 @@ function currentGuesses(e) {
   challenger2CurrentGuess.innerText = challenger2CurrentGuessInput.value;
   checkGuesses1();
   checkGuesses2();
-  functionAddCard();
 }
+
 function checkGuesses1() {
   if (parseInt(challenger1CurrentGuessInput.value) < randomNumber) {
   challenger1Alert.innerText = "That's too low!";
@@ -69,7 +58,10 @@ function checkGuesses1() {
   challenger1Alert.innerText = "That's too high!";
   } else {
     challenger1Alert.innerText = "BOOM";
+    functionAddCard();
+  }
 }
+
 function checkGuesses2() {
   if (parseInt(challenger2CurrentGuessInput.value) < randomNumber) {
   challenger2Alert.innerText = "That's too low!";
@@ -77,7 +69,8 @@ function checkGuesses2() {
   challenger2Alert.innerText = "That's too high!";
   } else {
     challenger2Alert.innerText = "BOOM";
-}
+    functionAddCard();
+  }
 }
 
 function functionAddCard() {
@@ -105,7 +98,7 @@ var cardHTML = `<article class="card-info" id="${cardNumber} ">
           </table>
         </article>`
         cardNumber++;
-        boxTwoSection.insertAdjacentHTML('beforeend',cardHTML);
+        boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);
     }
 
 ///Reset button resets guess fields to blank
@@ -121,6 +114,15 @@ function resetGuesses() {
 var submitButtonVar = document.getElementById('new-button-name');
 submitButtonVar.addEventListener("click", DisableButtons);
 
+// Clear button only clears guess input fields
+var clearButton = document.getElementById("clear-game");
+clearButton.addEventListener("click", clearFields);
+
+function clearFields(e) {
+    e.preventDefault();
+    document.getElementById("input-Challenger1-guess").value = "";
+    document.getElementById("input-Challenger2-guess").value = "";
+}
 
 function DisableButtons(){
        var chalOneInput = document.getElementById('input-Challenger1-name');
@@ -160,7 +162,6 @@ function RangesIncorrect() {
       alert("Your maximum number is lower than your minimum!");
     }
   }
-}
 
 
 ///boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);

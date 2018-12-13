@@ -2,145 +2,112 @@
   <html lang=en>
   <head>
     <title>Number Guesser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
   </head>
   <body>
-    <header>
+      <header>
       <div id="header-text">
         <h1><strong>NUMBER</strong>GUESSER</h1>
         <h3>ULTIMATE CHALLENGER EDITION</h3>
       </div>
-    </header>
-    <section class="body-container">
-      <article class="box boxone">
-       <div id="set-range" class="game-panels">
-          <h4>Set Range</h4>
-          <form>
-            <label for="min-range">Min Range</label>
-            <label for="max-range">Max Range</label>
-            <br>
-            <input type="number" id="min-range" class="fields" name="min-range">
-            <input type="number" id="max-range" class="fields" name="max-range">
-            <button id="new-button-name">UPDATE</button>
-          </form>
-        </div>
-        <div id="play-game" class="game-panels">
-          <p>The Current Range is <span id="min"><strong>1</strong></span> to <span id="max"><strong>100</strong></span>
-          </p>
-          <h4>Challenger 1</h4>
-          <form>
-            <table>
+      </header>
+<section class= 'body-container'>
+  <article class="box boxone">
+     <div id="set-range" class="game-panels">
+        <h4>Set Range</h4>
+        <form>
+          <label for="min-range">Min Range</label>
+          <label for="max-range">Max Range</label>
+          <br>
+          <input type="number" id="min-range" class="fields" name="min-range">
+          <input type="number" id="max-range" class="fields" name="max-range">
+          <button id="new-button-name">UPDATE</button>
+        </form>
+      </div>
+      <div id="play-game" class="game-panels">
+        <p>The Current Range is <span id="min"><strong>1</strong></span> to <span id="max"><strong>100</strong></span></p>
+
+        <h4>Challenger 1</h4>
+
+        <form>
+          <table>
+            <tr>
+              <td>Name</td>
+              <td>Guess</td>
+            </tr>
               <tr>
-                <td>Name</td>
-                <td>Guess</td>
-              </tr>
-              <tr>
-                <td><input type="text" id="input-Challenger1-name" class="name-fields" name="challenger1"></td>
-                <td><input type="number" min="1" max="100" id="input-Challenger1-guess" class="fields" name="challenger1-guess"></td>
-              </tr>
-            </table>
-            <h4>Challenger 2</h4>
-            <table>
-              <tr>
-                <td>Name</td>
-                <td>Guess</td>
-              </tr>
-              <tr>
-                <td><input type="text" id="input-Challenger2-name" class="name-fields" name="challenger2"></td>
-                <td><input type="number" id="input-Challenger2-guess" class="fields" name="challenger2-guess"></td>
-              </tr>
-            </table>
-            <br>
-            <button id="submit-guess">SUBMIT GUESS</button>
-            <button id="reset-game">RESET GAME</button>
-            <button id="clear-game">CLEAR GAME</button>
-          </form>
-        </div>
-        <section>       
-          <div class="game-panels">
-            <article class="latest-score-title"><h4>Latest Score</h4>
-            </article>
-            <div id="latest-score">
-              <article id="challenger1-score" class="scores">
-                <h5><span id="fill-Challenger1-name">CHALLENGER 1 NAME</span></h5>
-                <h6>current guess</h6>
-                <h1 id="challenger1-current-guess"><strong>00</strong></h1>
-                <h6 id="challenger1-alert">Challenger 1 Alert</h6>
-              </article>  
-              <article id="challenger2-score" class="scores">
-                <h5 id="fill-Challenger2-name">Challenger 2 Name</h5>
-                <h6>current guess</h6>
-                <h1 id="challenger2-current-guess"><strong>00</strong></h1>
-                <h6 id="challenger2-alert">Challenger 2 Alert</h6>
-              </article>
-            </div>
-          </div>
+              <td><input type="text" id="input-Challenger1-name" class="name-fields" name="challenger1"></td>
+              <td><input type="number" min="1" max="100" id="input-Challenger1-guess" class="fields" name="challenger1-guess"></td>
+
+            </tr>
+          </table>
+          <h4>Challenger 2</h4>
+          <table>
+            <tr>
+              <td>Name</td>
+              <td>Guess</td>
+            </tr>
+            <tr>
+               <td><input type="text" id="input-Challenger2-name" class="name-fields" name="challenger2"></td>
+              <td><input type="number" id="input-Challenger2-guess" class="fields" name="challenger2-guess"></td>
+            </tr>
+          </table>
+          <br>
+          <section class="play-game-button">
+          <button id="submit-guess">SUBMIT GUESS</button>
+          <button id="reset-game">RESET GAME</button>
+          <button id="clear-game">CLEAR GAME</button>
         </section>
+        </form>
+      </div>
+      <section>       
+      <div class="game-panels">
+        <div id="latest-score">
+        <article id="challenger1-score" class="scores"> <h4 class="latest-score-title">Latest Score</h4>
+          <h5><span id="fill-Challenger1-name">CHALLENGER 1 NAME</span></h5>
+          <h6>current guess</h6>
+          <h1 id="challenger1-current-guess"><strong>00</strong></h1>
+          <h6 id="challenger1-alert">Challenger 1 Alert</h6>
+        </article> 
+        <hr width="1" size="140" color="gainsboro" class="hr-vertical"> 
+        <article id="challenger2-score" class="scores">
+          <h5 id="fill-Challenger2-name">CHALLENGER 2 NAME</h5>
+          <h6>current guess</h6>
+          <h1 id="challenger2-current-guess"><strong>00</strong></h1>
+          <h6 id="challenger2-alert">Challenger 2 Alert</h6>
+        </article>
+      </div>
+      </div>
+    </section>
       </article>
       <article class="box boxtwo">
-        <article id="info-cards">
+        <!-- <hr width="1" size="500" color="gainsboro">  -->
+        <article class="card-info">
           <table class="versus-table">
             <tr>
-              <th><span id="fill-Challenger1-name">CHALLENGER 1 NAME</span></th>
-              <th> vs </th>
-              <th>CHALLENGER 2 NAME</th>
+             <th><span id="fill-Challenger1-name"><h2>CHALLENGER 1 NAME</h2></span></th>
+              <th><h4> vs </h4> </th>
+              <th><h2>CHALLENGER 2 NAME<h2></th>
             </tr>
           </table>
-          <hr>
-          <h2> XXX WINNERS NAME XXX </h2>
-          <h2>WINNER</h2>
-          <hr>
-          <table>
+            <hr>
+          <h2 id= "winner-name-text">  CHALLENGER X NAME </h2>
+          <h4 class='winner-text'>WINNER</h4>
+            <hr >
+          <table class="game-info">
             <tr>
-              <th>XXXXX NUMBER OF GUESSES</th>
-              <th>XXXXX GAME DURATION</th>
-              <th><button id="circle-button" type="button"onClick = "document.getElementById('info-cards').style.display = 'none';">&#x2715;</button></th>
+              <th><h4 class="game-text-info"><b>00</b> GUESSES </h4></th>
+              <th><h4 class="game-text-info"><b>00.00</b> MINUTES</h4></th>
+              <th><button id="circle-button" type="button" onClick="document.getElementById('card-info').style.visibility = 'hidden';">&#x2715;</button></th>
             </tr>
           </table>
         </article>
-        <article id="info-cards" bac>
-          <table class="versus-table">
-            <tr>
-              <th><span id="fill-Challenger1-name">CHALLENGER 1 NAME</span></th>
-              <th> vs </th>
-              <th>CHALLENGER 2 NAME</th>
-            </tr>
-          </table>
-          <hr>
-          <h2> XXX WINNERS NAME XXX </h2>
-          <h2>WINNER</h2>
-          <hr>
-          <table>
-            <tr>
-              <th>XXXXX NUMBER OF GUESSES</th>
-              <th>XXXXX GAME DURATION</th>
-              <th><button id="circle-button" type="button">&#x2715;</button></th>
-            </tr>
-          </table>
-        </article>
-        <article id="info-cards">
-          <table class="versus-table">
-            <tr>
-              <th><span id="fill-Challenger1-name">CHALLENGER 1 NAME</span></th>
-              <th> vs </th>
-              <th>CHALLENGER 2 NAME</th>
-            </tr>
-          </table>
-          <hr>
-          <h2> XXX WINNERS NAME XXX </h2>
-          <h2>WINNER</h2>
-          <hr>
-          <table>
-            <tr>
-              <th>XXXXX NUMBER OF GUESSES</th>
-              <th>XXXXX GAME DURATION</th>
-              <th><button id="circle-button" type="button">&#x2715;</button></th>
-            </tr>
-          </table>
-        </article>
-      </article>
-    </section>
-  </body>
-  <script src="main.js"></script>
+         
+         
+  </section>
+    </body>
+    <script src="main.js"></script>
+</body>
 </html>

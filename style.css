@@ -16,6 +16,11 @@ header {
   width: 100%;
 }
 
+#testing-buttons{
+  display:flex;
+
+}
+
 #header-text {
   height: 90px;
   width: 348px;
@@ -90,7 +95,7 @@ h4 {
 }
 
 #winner-name-text{
-margin-top: 10px;
+  margin-top: 10px;
 }
 
 .game-info{
@@ -156,7 +161,6 @@ button {
   margin-right: -15px;
 }
 
-
 #Winner-Winner {
   text-align: center;
   padding-top: 10px;
@@ -176,7 +180,6 @@ button {
   text-align: center;
   background-color: #D0D2D3 
 }
-
 
 table {
   text-align: left;
@@ -247,7 +250,6 @@ padding-bottom: 2px;
 padding-right: 15px;
 padding-left: 15px;
 margin-right: 8px;
-
 }
 
 #reset-game{
@@ -261,27 +263,35 @@ margin-left: 5px;
 }
 
 #clear-game{
-font-size: 15px;
-padding-top: 2px;
-padding-bottom: 2px;
-padding-right: 15px;
-padding-left: 15px;
-margin-left: 8px;
+  font-size: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: 8px;
 }
 
-#challenger1-score h4
-{margin-top: -10px;
+#challenger1-score h4{
+  margin-top: -10px;
   margin-left: -120px;
-margin-bottom: 10px;}
+  margin-bottom: 10px;}
 
 #challenger2-score{
   margin-top: 22px;
 }
+
 hr-vertical{
    width:1px;
   height: 140px;
   color: gainsboro;
 }
+
+#new-button{
+  margin-top: 15px; 
+  margin-left: 45px;
+  margin-bottom: -50px;
+}
+
 @media (max-width: 500px) {
   body {
     width: 320px;
@@ -298,11 +308,11 @@ hr-vertical{
   }
 
   #set-range button{
-  margin-top: 10px;
+    margin-top: 10px;
 }
   #set-range ul{
-  display: inline;
-  list-style-type: none;
+    display: inline;
+    list-style-type: none;
   }
 
   .min-range {
@@ -331,10 +341,7 @@ hr-vertical{
   .scores h6{
     font-weight: 300;
   }
-  /*#scores {
-    width: 320px;
-    flex:1;
-  }*/
+  
   .min-range-section{
     display: inline;
   }
@@ -366,17 +373,32 @@ hr-vertical{
     width: 100;
     size: 1;
 
-    }
+  }
 
   #challenger1-current-guess{
     font-size: 50px;
     font-weight: 800;
 
-    }
+  }
 
   #challenger2-current-guess{
     font-size: 50px;
     font-weight: 800;
 
-    }
+  }
 
+  label,
+  input{
+   display:block;
+    padding-left: 40px;
+    padding-right: -40px;  
+  }
+
+  #new-button{
+    margin-top: 15px; 
+    margin-left: 45px;
+  }
+
+  #testing-buttons{
+    display: block;
+  }

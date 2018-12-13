@@ -58,11 +58,11 @@ function currentGuesses(e) {
   challenger1CurrentGuess.innerText = challenger1CurrentGuessInput.value;
   challenger2CurrentName.innerText = challenger2CurrentNameInput.value;
   challenger2CurrentGuess.innerText = challenger2CurrentGuessInput.value;
-  checkGueses();
+  checkGuesses1();
+  checkGuesses2();
   functionAddCard();
 }
-function checkGueses() {
-  console.log(parseInt(challenger1CurrentGuessInput.value));
+function checkGuesses1() {
   if (parseInt(challenger1CurrentGuessInput.value) < randomNumber) {
   challenger1Alert.innerText = "That's too low!";
   } else if (parseInt(challenger1CurrentGuessInput.value) > randomNumber) {
@@ -70,7 +70,44 @@ function checkGueses() {
   } else {
     challenger1Alert.innerText = "BOOM";
 }
+function checkGuesses2() {
+  if (parseInt(challenger2CurrentGuessInput.value) < randomNumber) {
+  challenger2Alert.innerText = "That's too low!";
+  } else if (parseInt(challenger2CurrentGuessInput.value) > randomNumber) {
+  challenger2Alert.innerText = "That's too high!";
+  } else {
+    challenger2Alert.innerText = "BOOM";
 }
+}
+
+function functionAddCard() {
+var cardNumber = 0;
+var boxTwoSection = document.querySelector(".boxtwo");
+var cardNumberAdds = document.querySelector(".cardNumber");
+var cardHTML = `<article class="card-info" id="${cardNumber} ">
+          <table class="versus-table">
+            <tr>
+             <th><h2>${challenger1CurrentNameInput.value}</h2></th>
+              <th><h4> vs </h4> </th>
+              <th><h2>${challenger2CurrentNameInput.value}</h2></th>
+            </tr>
+          </table>
+            <hr>
+          <h2 id= "winner-name-text">  CHALLENGER X NAME </h2>
+          <h4 class='winner-text'>WINNER</h4>
+            <hr>
+          <table class="game-info">
+            <tr>
+              <th><h4 class="game-text-info"><b>00</b> GUESSES </h4></th>
+              <th><h4 class="game-text-info"><b>00.00</b> MINUTES</h4></th>
+              <th><button id="circle-button" type="button" onClick="document.getElementById('card-info').style.visibility = 'hidden';">&#x2715;</button></th>
+            </tr>
+          </table>
+        </article>`
+        cardNumber++;
+        boxTwoSection.insertAdjacentHTML('beforeend',cardHTML);
+    }
+
 ///Reset button resets guess fields to blank
 var resetButton = document.getElementById("reset-game");
 
@@ -79,7 +116,6 @@ resetButton.addEventListener("click", resetGuesses);
 function resetGuesses() {
   document.getElementById("challenger1-guess").reset();
   document.getElementById("challenger2-guess").reset();
-
 }
 
 var submitButtonVar = document.getElementById('new-button-name');
@@ -112,7 +148,7 @@ function DisableButtons(){
 var minRangeField = document.getElementById('min-range');
 minRangeField.addEventListener("keyup", RangesIncorrect);
 
-function RangesIncorrect(){
+function RangesIncorrect() {
   var minRangeNumber = document.getElementById('min-range');
   var maxRangeNumber = document.getElementById('max-range');
   // var newButtonVar = document.getElementById('new-button-name');
@@ -122,36 +158,10 @@ function RangesIncorrect(){
     } else if (parseInt(maxRangeNumber.value) < parseInt(minRangeNumber.value)){
       document.getElementById("new-button-name").disabled = true;
       alert("Your maximum number is lower than your minimum!");
-    } 
+    }
+  }
 }
 
-function functionAddCard(){
-var cardNumber =0;
-var boxTwoSection = document.querySelector(".boxtwo");
-var cardNumberAdds = document.querySelector(".cardNumber");
-var cardHTML = `<article class="card-info" id="${cardNumber} ">
-          <table class="versus-table">
-            <tr>
-             <th><h2>${challenger1CurrentNameInput.value}</h2></th>
-              <th><h4> vs </h4> </th>
-              <th><h2>${challenger2CurrentNameInput.value}</h2></th>
-            </tr>
-          </table>
-            <hr>
-          <h2 id= "winner-name-text">  CHALLENGER X NAME </h2>
-          <h4 class='winner-text'>WINNER</h4>
-            <hr>
-          <table class="game-info">
-            <tr>
-              <th><h4 class="game-text-info"><b>00</b> GUESSES </h4></th>
-              <th><h4 class="game-text-info"><b>00.00</b> MINUTES</h4></th>
-              <th><button id="circle-button" type="button" onClick="document.getElementById('card-info').style.visibility = 'hidden';">&#x2715;</button></th>
-            </tr>
-          </table>
-        </article>`
-        cardNumber++;
-        boxTwoSection.insertAdjacentHTML('beforeend',cardHTML);
-      }
 
 ///boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);
 

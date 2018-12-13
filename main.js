@@ -3,22 +3,26 @@ var randomNumber = Math.floor((Math.random() * 100) + 1);
 console.log(randomNumber);
 
 // Setting min and max range
-
 var minRange = document.getElementById("min-range");
 var maxRange = document.getElementById("max-range");
 var minDisplay = document.getElementById("min");
 var maxDisplay = document.getElementById("max");
 var updateButton = document.getElementById("new-button-name");
 
-updateButton.addEventListener('click', minNumFunction);
+updateButton.addEventListener('click', rangeNumFunction);
 
-function minNumFunction(e) {
+function rangeNumFunction(e) {
   e.preventDefault();
-console.log("range set");
-var minNumber = minRange.value;
+var minNumber = parseInt(minRange.value);
 minDisplay.innerText = minNumber;
-var maxNumber = maxRange.value;
+var maxNumber = parseInt(maxRange.value);
+// console.log(typeof maxNumber);
 maxDisplay.innerText = maxNumber;
+updateRandomNumber(minNumber, maxNumber);
+}
+
+function updateRandomNumber(min, max) {
+  console.log(Math.floor(Math.random() * (max - min + 1) + min));
 }
 
 var challenger1Alert = document.getElementById("challenger1-alert");

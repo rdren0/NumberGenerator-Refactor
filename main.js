@@ -1,34 +1,10 @@
-// Generating random number 
+//---------------Global Variables---------------//
 var randomNumber = Math.floor((Math.random() * 100) + 1);
-console.log(randomNumber);
-
-// Setting min and max range
 var minRange = document.getElementById("min-range");
 var maxRange = document.getElementById("max-range");
 var minDisplay = document.getElementById("min");
 var maxDisplay = document.getElementById("max");
 var updateButton = document.getElementById("new-button-name");
-
-updateButton.addEventListener('click', rangeNumFunction);
-
-function rangeNumFunction(e) {
-  e.preventDefault();
-var minNumber = parseInt(minRange.value);
-minDisplay.innerText = minNumber;
-var maxNumber = parseInt(maxRange.value);
-// console.log(typeof maxNumber);
-maxDisplay.innerText = maxNumber;
-updateRandomNumber(minNumber, maxNumber);
-}
-
-function updateRandomNumber(min, max) {
-  console.log(Math.floor(Math.random() * (max - min + 1) + min));
-}
-
-var challenger1Alert = document.getElementById("challenger1-alert");
-var challenger2Alert = document.getElementById("challenger2-alert");
-
-// Current guesses show in Latest score panel
 var challenger1CurrentNameInput = document.getElementById("input-Challenger1-name");
 var challenger1CurrentGuessInput = document.getElementById("input-Challenger1-guess");
 var challenger2CurrentNameInput = document.getElementById("input-Challenger2-name");
@@ -38,8 +14,61 @@ var challenger1CurrentName = document.getElementById("fill-Challenger1-name");
 var challenger1CurrentGuess = document.getElementById("challenger1-current-guess");
 var challenger2CurrentName = document.getElementById("fill-Challenger2-name");
 var challenger2CurrentGuess = document.getElementById("challenger2-current-guess");
+var challenger1Alert = document.getElementById("challenger1-alert");
+var challenger2Alert = document.getElementById("challenger2-alert");
+var resetButton = document.getElementById("reset-game");
+var submitButtonVar = document.getElementById('new-button-name');
+var clearButton = document.getElementById("clear-game");
+var minRangeField = document.getElementById('min-range');
+
+
+
+//---------------Event Listeners---------------//
 
 submitButton.addEventListener("click", currentGuesses);
+updateButton.addEventListener('click', rangeNumFunction);
+resetButton.addEventListener("click", resetGuesses);
+submitButtonVar.addEventListener("click", DisableButtons);
+clearButton.addEventListener("click", clearFields);
+minRangeField.addEventListener("keyup", RangesIncorrect);
+
+
+//---------------Functions---------------//
+
+function rangeNumFunction(e) {
+  e.preventDefault();
+  var minNumber = parseInt(minRange.value);
+  minDisplay.innerText = minNumber;
+  var maxNumber = parseInt(maxRange.value);
+  maxDisplay.innerText = maxNumber;
+  updateRandomNumber(minNumber, maxNumber);
+}
+
+function RangesIncorrect() {
+  if (parseInt(minRange.value) > parseInt(maxRange.value)) {
+    document.getElementById("new-button-name").disabled = true;
+    alert("Your minimum number is higher than your maximum!");
+  } else if (parseInt(maxRange.value) < parseInt(minRange.value)) {
+    document.getElementById("new-button-name").disabled = true;
+    alert("Your maximum number is lower than your minimum!");
+  }
+}
+
+function DisableButtons() {
+  if (challenger1CurrentNameInput.value.length === 0 || challenger2CurrentNameInput.value.length === 0 ) {
+    clearButton.Disable = true;
+    resetButton.Disable = true;
+  } else if (challenger1CurrentGuessInput.value.length === 0 || challenger2CurrentGuessInput.value.length === 0) {
+    clearButton.Disable = true;
+    resetButton.Disable = true;
+  } else {
+    alert("Error!");
+  }
+}
+
+function updateRandomNumber(min, max) {
+  Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 function currentGuesses(e) {
   e.preventDefault();
@@ -53,9 +82,9 @@ function currentGuesses(e) {
 
 function checkGuesses1() {
   if (parseInt(challenger1CurrentGuessInput.value) < randomNumber) {
-  challenger1Alert.innerText = "That's too low!";
+    challenger1Alert.innerText = "That's too low!";
   } else if (parseInt(challenger1CurrentGuessInput.value) > randomNumber) {
-  challenger1Alert.innerText = "That's too high!";
+    challenger1Alert.innerText = "That's too high!";
   } else {
     challenger1Alert.innerText = "BOOM";
     functionAddCard();
@@ -64,9 +93,9 @@ function checkGuesses1() {
 
 function checkGuesses2() {
   if (parseInt(challenger2CurrentGuessInput.value) < randomNumber) {
-  challenger2Alert.innerText = "That's too low!";
+    challenger2Alert.innerText = "That's too low!";
   } else if (parseInt(challenger2CurrentGuessInput.value) > randomNumber) {
-  challenger2Alert.innerText = "That's too high!";
+    challenger2Alert.innerText = "That's too high!";
   } else {
     challenger2Alert.innerText = "BOOM";
     functionAddCard();
@@ -74,10 +103,10 @@ function checkGuesses2() {
 }
 
 function functionAddCard() {
-var cardNumber = 0;
-var boxTwoSection = document.querySelector(".boxtwo");
-var cardNumberAdds = document.querySelector(".cardNumber");
-var cardHTML = `<article class="card-info" id="${cardNumber} ">
+  var cardNumber = 0;
+  var boxTwoSection = document.querySelector(".boxtwo");
+  var cardNumberAdds = document.querySelector(".cardNumber");
+  var cardHTML = `<article class="card-info" id="${cardNumber} ">
           <table class="versus-table">
             <tr>
              <th><h2>${challenger1CurrentNameInput.value}</h2></th>
@@ -97,73 +126,18 @@ var cardHTML = `<article class="card-info" id="${cardNumber} ">
             </tr>
           </table>
         </article>`
-        cardNumber++;
-        boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);
-    }
-
-///Reset button resets guess fields to blank
-var resetButton = document.getElementById("reset-game");
-
-resetButton.addEventListener("click", resetGuesses);
+  cardNumber++;
+  boxTwoSection.insertAdjacentHTML('afterbegin', cardHTML);
+}
 
 function resetGuesses() {
-  document.getElementById("challenger1-guess").reset();
-  document.getElementById("challenger2-guess").reset();
+  challenger1CurrentGuessInput.reset();
+  challenger2CurrentGuessInput.reset();
 }
-
-var submitButtonVar = document.getElementById('new-button-name');
-submitButtonVar.addEventListener("click", DisableButtons);
-
-// Clear button only clears guess input fields
-var clearButton = document.getElementById("clear-game");
-clearButton.addEventListener("click", clearFields);
 
 function clearFields(e) {
-    e.preventDefault();
-    document.getElementById("input-Challenger1-guess").value = "";
-    document.getElementById("input-Challenger2-guess").value = "";
+  e.preventDefault();
+  challenger1CurrentGuessInput.value = "";
+  challenger1CurrentGuessInput.value = "";
 }
-
-function DisableButtons(){
-       var chalOneInput = document.getElementById('input-Challenger1-name');
-       var chalTwoInput = document.getElementById('input-Challenger2-name');
-       var chalOneNum = document.getElementById('input-Challenger1-guess');
-       var chalTwoNum = document.getElementById('input-Challenger1-guess');
-       var resetButton = document.getElementById('reset-game')
-       var clearButton = document.getElementById('clear-game');
-         if ( chalOneInput.value.length = 0) {
-              clearButton.Disable = true;
-              resetButton.Disable = true;
-            } else if (chalTwoInput.value.length =0 ){
-              clearButton.Disable = true;
-              resetButton.Disable = true;
-            } else if (chalOneNum.value.length=0){
-              clearButton.Disable = true;
-              resetButton.Disable = true;
-            }else if (chalTwoNum.value.length =0){
-              clearButton.Disable = true;
-              resetButton.Disable = true;
-            }
-   }
-
-
-var minRangeField = document.getElementById('min-range');
-minRangeField.addEventListener("keyup", RangesIncorrect);
-
-function RangesIncorrect() {
-  var minRangeNumber = document.getElementById('min-range');
-  var maxRangeNumber = document.getElementById('max-range');
-  // var newButtonVar = document.getElementById('new-button-name');
-  if (parseInt(minRangeNumber.value) > parseInt(maxRangeNumber.value)){
-      document.getElementById("new-button-name").disabled = true;
-      alert("Your minimum number is higher than your maximum!");
-    } else if (parseInt(maxRangeNumber.value) < parseInt(minRangeNumber.value)){
-      document.getElementById("new-button-name").disabled = true;
-      alert("Your maximum number is lower than your minimum!");
-    }
-  }
-
-
-///boxTwoSection.insertAdjacentHTML('afterbegin',cardHTML);
-
 
